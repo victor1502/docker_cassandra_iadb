@@ -1,15 +1,14 @@
-FROM python:3.13.0
+FROM python:3.9
 
 # Establecer el directorio de trabajo en /app
 WORKDIR /app
 
+COPY requirements.txt .
 # Instalar dependencias necesarias
-RUN pip install --no-cache-dir cassandra-driver flask
+RUN pip install -r requirements.txt
 
 # Copiar los archivos de la aplicación al contenedor
-COPY . /app
-
-EXPOSE 9042
+COPY . .
 
 # Comando por defecto al iniciar el contenedor
 CMD ["python", "app.py"]
