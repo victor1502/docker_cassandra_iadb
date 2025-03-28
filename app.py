@@ -31,7 +31,6 @@ if row:
 else:
   print("An error occurred.")
 
-print("-------------------------------------------------------")
 
 session.set_keyspace('victorcass')
 
@@ -45,7 +44,6 @@ def get_tables():
     tables = [row.table_name for row in rows]
     return "<br>".join(tables) if tables else "No hay datos disponibles."
 
-print("-------------------------------------------------------")
 
 @app.route('/clientes')
 def get_clientes():
@@ -53,7 +51,6 @@ def get_clientes():
     clientes = [str(row) for row in rows]
     return "<br>".join(clientes) if clientes else "No hay datos disponibles."
 
-print("-------------------------------------------------------")
 
 @app.route('/pedidos')
 def get_pedidos():
@@ -61,7 +58,6 @@ def get_pedidos():
     pedidos = [str(row) for row in rows]
     return "<br>".join(pedidos) if pedidos else "No hay datos disponibles."
 
-print("-------------------------------------------------------")
 
 
 if __name__ == '__main__':
